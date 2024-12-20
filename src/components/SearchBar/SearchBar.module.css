@@ -1,0 +1,35 @@
+.searchBar {
+  padding: 8px;
+  background-color: #3f50b5;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.inputGroup {
+  padding: 4px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  background-color: #fff;
+  border-radius: 4px;
+  width: 400px;
+}
+
+.inputButton {
+  background-color: transparent;
+  font-size: 10px;
+  padding: 4px;
+}
+
+.input {
+  border: none;
+  background-color: #fff;
+  width: 100%;
+
+  &:focus,
+  &:focus-visible {
+    border: none;
+    outline: none;
+  }
+}

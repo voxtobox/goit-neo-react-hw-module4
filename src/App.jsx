@@ -8,11 +8,11 @@ function App() {
   const { images, search, loadMore, canLoadMore } = useGallery();
 
   return (
-    <div>
+    <>
       <SearchBar onSearch={search} />
       <ImageGallery images={images} />
       {canLoadMore && <LoadMoreBtn onClick={loadMore} />}
-    </div>
+    </>
   );
 }
 
