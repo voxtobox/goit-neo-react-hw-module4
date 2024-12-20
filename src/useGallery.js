@@ -19,6 +19,7 @@ export function useGallery() {
       const data = await fetchPhotoByQuery(query, currentPage);
       setTotalPages(data.total_pages);
       setImages(images.concat(data.results));
+      if (!data.total) setError('No images found');
     } catch (serverError) {
       console.log('error: ', serverError);
       setError(serverError?.errors?.join('') || 'Something wrong');
@@ -33,6 +34,7 @@ export function useGallery() {
   }
 
   function search(searchQuery) {
+    setError('');
     setImages([]);
     setQuery(searchQuery);
     setCurrentPage(1);
