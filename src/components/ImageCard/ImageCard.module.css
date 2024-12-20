@@ -3,6 +3,12 @@
   width: 300px;
   padding-bottom: 65%;
   overflow: hidden;
+  transition: transform 100ms;
+}
+
+.card:hover {
+  cursor: zoom-in;
+  transform: scale(1.02);
 }
 
 .image {
