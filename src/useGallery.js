@@ -17,7 +17,6 @@ export function useGallery() {
     setLoading(true);
     try {
       const data = await fetchPhotoByQuery(query, currentPage);
-      console.log(data);
       setTotalPages(data.total_pages);
       setImages(images.concat(data.results));
     } catch (serverError) {
@@ -37,6 +36,7 @@ export function useGallery() {
     setImages([]);
     setQuery(searchQuery);
     setCurrentPage(1);
+    setTotalPages(0);
   }
 
   useEffect(() => {
