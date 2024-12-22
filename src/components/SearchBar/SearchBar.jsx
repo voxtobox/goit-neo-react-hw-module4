@@ -1,11 +1,20 @@
 import { useRef } from 'react';
+import toast from 'react-hot-toast';
 import css from './SearchBar.module.css';
 
 export default function SearchBar({ onSearch }) {
   const inputRef = useRef();
 
   function handleSearch() {
-    onSearch(inputRef.current.value);
+    toast.dismiss();
+    const query = inputRef.current.value;
+    if (!query) {
+      toast.error('You need to enter the text to search images', {
+        position: 'bottom-center',
+      });
+    } else {
+      onSearch(inputRef.current.value);
+    }
   }
 
   function handleKeyDown(event) {

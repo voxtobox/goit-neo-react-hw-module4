@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Toaster } from 'react-hot-toast';
 import './App.css';
 import ImageGallery from './components/ImageGallery/ImageGallery';
 import SearchBar from './components/SearchBar/SearchBar';
@@ -35,6 +36,7 @@ function App() {
           }}
         />
       )}
+      <Toaster />
     </>
   );
 }
